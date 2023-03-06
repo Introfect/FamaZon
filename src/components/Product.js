@@ -2,7 +2,7 @@ import React,{ useState,useEffect } from 'react'
 import { StarIcon } from '@heroicons/react/outline';
 import { keys } from '@material-ui/core/styles/createBreakpoints';
 
-function Product({id,title, price, description, category, image,}) {
+function Product({id,title, key,price, description, category, image,}) {
   const MAX_RATING = 5;
   const MIN_RATING = 1;
   const [rating, setRating] = useState(1);
@@ -23,6 +23,9 @@ function Product({id,title, price, description, category, image,}) {
 
     <div className='relative flex-col border-2 rounded-md m-5 bg-white p-10'>
         <p className='absolute top-0 text-xs italic right-3'>{category}</p>
+        {key}
+        {id}
+        
 
       <img src={image} alt='' className='hwight={200} width={200} objectFit={contain}'/>
       <h1 className='font-bold text-center my-2'>{title}</h1>
