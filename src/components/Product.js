@@ -1,5 +1,6 @@
 import React,{ useState,useEffect } from 'react'
 import { StarIcon } from '@heroicons/react/outline';
+import { keys } from '@material-ui/core/styles/createBreakpoints';
 
 function Product({id,title, price, description, category, image,}) {
   const MAX_RATING = 5;
@@ -8,27 +9,28 @@ function Product({id,title, price, description, category, image,}) {
 
   const [hasPrime, setHasPrime] = useState(true);
 
-  useEffect(() => {
-    setRating(
-      Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
-    );
-    setHasPrime(Math.random() < 0.5);
-  }, []);
+  // useEffect(() => {
+  //   setRating(
+  //     Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
+  //   );
+  //   setHasPrime(Math.random() < 0.5);
+  // }, []);
 
   const rate=[rating]
 
 
   return (
+
     <div className='relative flex-col border-2 rounded-md m-5 bg-white p-10'>
         <p className='absolute top-0 text-xs italic right-3'>{category}</p>
 
       <img src={image} alt='' className='hwight={200} width={200} objectFit={contain}'/>
       <h1 className='font-bold text-center my-2'>{title}</h1>
       <div className='flex'>
-
+{/* 
       {rate.map((rating) => (
-        <StarIcon className='h-5 text-yellow-500'/>
-        ))}
+        <StarIcon   className='h-5 text-yellow-500'/>
+        ))} */}
         </div>
 
             <p className='text-xs my-2 text-gray-400 line-clamp-2'>{description}</p>

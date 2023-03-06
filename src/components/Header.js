@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { SearchIcon, MenuIcon, ShoppingCartIcon } from '@heroicons/react/outline'
+import { useSession, signIn, signOut } from "next-auth/react"
 
 const Header = () => {
   return (
@@ -22,7 +23,7 @@ const Header = () => {
             <div className='text-white flex items-center text-xs space-x-6 mx-6'>
               <div className='link'>
                 <p>Hello Aayushman</p>
-                <p className='font-extrabold md:text-xs'>Sign in</p>
+                <p onClick={signIn}className='font-extrabold md:text-xs'>Sign in</p>
               </div>
               <div className='link'>
               <p>Returns</p>
