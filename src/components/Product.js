@@ -1,6 +1,5 @@
 import React,{ useState,useEffect } from 'react'
-import { StarIcon } from '@heroicons/react/outline';
-import { keys } from '@material-ui/core/styles/createBreakpoints';
+
 import {useDispatch } from 'react-redux';
 import { addToBasket } from '../slices/basketSlice';
 
