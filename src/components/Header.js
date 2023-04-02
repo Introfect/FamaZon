@@ -19,6 +19,7 @@ const Header = () => {
                 src='http://links.papareact.com/f90'
                 width={100}
                 height={40}
+                alt='imagge'
                 style={{objectFit:"cover"}}
                 className='cursor-pointer'
                 />
@@ -53,7 +54,7 @@ const Header = () => {
           </p>
           <p className='link'>Prime Video</p>
           <p className='link'>Amazon Buisness</p>
-          <p className='link'>Today's Deal</p>
+          <p className='link'>Today&aposs Deal</p>
           <p className='hidden lg:inline-flex link'>Electronics</p>
           <p className='hidden lg:inline-flex link'>Food & Grocery </p>
           <p className='hidden lg:inline-flex link'>Prime</p>

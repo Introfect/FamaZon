@@ -11,7 +11,9 @@ const Checkout = () => {
     <div className='bg-gray-200'>
     <Header/>
     <main className='lg:flex max-w-screen-2xl mx-auto'> 
-    <Image src='https://links.papareact.com/ikj' width={1020} height={250} objectFit='contain' />
+    <Image
+    alt='image' 
+    src='https://links.papareact.com/ikj' width={1020} height={250} objectFit='contain' />
 
     </main>
 
