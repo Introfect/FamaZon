@@ -1,6 +1,8 @@
 import React,{ useState,useEffect } from 'react'
 import { StarIcon } from '@heroicons/react/outline';
 import { keys } from '@material-ui/core/styles/createBreakpoints';
+import {useDispatch } from 'react-redux';
+import { addToBasket } from '../slices/basketSlice';
 
 function Product({id,title, key,price, description, category, image,}) {
   const MAX_RATING = 5;
@@ -16,8 +18,15 @@ function Product({id,title, key,price, description, category, image,}) {
   //   setHasPrime(Math.random() < 0.5);
   // }, []);
 
+  const dispatch = useDispatch(); 
   const rate=[rating]
-
+  const addItemToBasket = () => {
+    const product = {
+      id, title, key, price, description, category, image, rating, hasPrime
+    };
+    // Sending the product as an action to the REDUX store... the basket slice
+    dispatch(addToBasket(product));
+  }
 
   return (
 
@@ -45,7 +54,7 @@ function Product({id,title, key,price, description, category, image,}) {
             </div>
             )}
       <div className='flex justify-center'>
-      <button className='flex justify-center bg-yellow-400 p-2 rounded-md'>Buy now</button>
+      <button onClick={addItemToBasket} className='flex justify-center bg-yellow-400 p-2 rounded-md'>Buy now</button>
       </div>
 
     </div>
